@@ -1,0 +1,12 @@
+.*
+Arduino/
+ExtraDrive/
+Dev/android
+Dev/arduino-1.8.10
+Dev/eclipse
+Dev/flutter
+Dropbox/
+ffonseca@unitechsite.com/
+Public/
+sketchbook/
+yarn.lock
