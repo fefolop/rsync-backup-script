@@ -72,6 +72,7 @@
 #                           Change local backup not to use SSH.                #
 #                           Instructions to use --exclude-from.                #
 #                           All work belong to David Both.                     #
+#                           Git use for VCS. No new change log in this file    #
 #                                                                              #
 #                                                                              #
 #                                                                              #
