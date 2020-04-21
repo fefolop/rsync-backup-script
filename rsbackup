@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 ################################################################################
-#                                  rsbackup                                        #
+#                                  rsbackup                                    #
 #                                                                              #
 # This script is used to create a backup using rsync and creating a series of  #
 # directories, one for each daily backup. It uses the link capability of rsync #
@@ -45,7 +45,7 @@
 #                           listing the target backup devices.                 #
 # 04/14/2014  David Both    Changed $ThisHost to split off the domain name and #
 #                           leave only the hostname. This matches up with the  #
-#                           data in rsbackup.conf.                                 #
+#                           data in rsbackup.conf.                             #
 # 06/21/2014  David Both    Added logic code to ping hosts to determine if     #
 #                           they are communicating on the network and skip     #
 #                           backup if they are not.                            #
@@ -606,7 +606,7 @@ then
                      echo "Not test mode. We ARE performing the backup."
                   fi
                   echo "Excludes: $Excludes"
-                  rsync -aHv --delete --link-dest=$LastBackupPath $Excludes $BackupData $TodaysBackupPath
+                  rsync -aH --delete --link-dest=$LastBackupPath $Excludes $BackupData $TodaysBackupPath
                else
                   if [ $verbose = 1 ]
                   then
@@ -624,7 +624,7 @@ then
                   then
                      echo "Not test mode. We ARE performing the backup."
                   fi
-                  rsync -aHv -e ssh --delete --link-dest=$LastBackupPath $Excludes $HostName$BackupData $TodaysBackupPath
+                  rsync -aH -e ssh --delete --link-dest=$LastBackupPath $Excludes $HostName$BackupData $TodaysBackupPath
                else
                   if [ $verbose = 1 ]
                   then
@@ -651,7 +651,7 @@ then
                   then
                      echo "Not test mode. We ARE performing the backup."
                   fi
-                  rsync -aHv --delete $Excludes $BackupData $TodaysBackupPath
+                  rsync -aH --delete $Excludes $BackupData $TodaysBackupPath
                else
                   if [ $verbose = 1 ]
                   then
@@ -669,7 +669,7 @@ then
                   then
                      echo "Not test mode. We ARE performing the backup."
                   fi
-                  rsync -aHv -e ssh --delete $Excludes $HostName$BackupData $TodaysBackupPath
+                  rsync -aH -e ssh --delete $Excludes $HostName$BackupData $TodaysBackupPath
                else
                   if [ $verbose = 1 ]
                   then
